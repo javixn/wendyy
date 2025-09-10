@@ -1,0 +1,161 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(circle at center, #012d83 , #013351);
+  color: white;
+  text-align: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+
+/*Estilos del robot y burbuja*/
+.contenedor-gif {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  width: 100%;
+  max-width: 460px;  /* ancho iPhone 16 */
+  top: 40px;
+}
+
+.robotio {
+  width: 320px;
+  height: 320px;
+}
+
+
+.burbuja {
+  display: inline-block;
+  position: absolute;
+  right: -30px; 
+  top: 80px;
+  max-width: 180px;
+  background: white;
+  color: #333;
+  font-size: 1rem;
+  font-family: Lilita One;
+  padding: 10px 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  animation: flotar 3s infinite ease-in-out;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+.burbuja::after {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid white;
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+#accion{
+  background-color:  #3075ff;
+  border: none;
+  border-radius: 15px;
+  color: aliceblue;
+  font-family: Lilita One;
+  font-size: 22px;
+  width: 140px;
+  height: 50px;
+  margin-top: 20px;
+  animation: flotar 3s infinite ease-in-out;
+  padding: 10px 5px;
+
+    /* 👇 Para centrar el texto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Contenedor de botones Sí y No */
+.botones-si-no {
+  display: flex;
+  justify-content: center;
+  gap: 20px;   /* espacio entre botones */
+  margin-top: 15px;
+}
+
+/* Botón Sí */
+#btnSi {
+  background-color: green;
+  height: 40px;
+  width: 80px;
+  border-radius: 10px;
+  color: white;
+  font-family: Lilita One;
+  font-size: 16px;
+  border: none;
+}
+
+/* Botón No */
+#btnNo {
+  background-color: red;
+  height: 40px;
+  width: 80px;
+  border-radius: 10px;
+  color: white;
+  font-family: Lilita One;
+  font-size: 16px;
+  border: none;
+}
+
+/* Ajuste para iPhone 16 (460 x 1000 aprox.) */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .contenedor-gif {
+    height: 400px;
+    top: 20px;
+  }
+
+  .robotio {
+    width: 260px;
+    height: 260px;
+  }
+
+  .burbuja {
+    font-size: 0.9rem;
+    max-width: 150px;
+    top: 50px;
+    right: -70px;
+  }
+
+  #accion {
+    width: 120px;
+    height: 45px;
+    font-size: 18px;
+  }
+
+  #btnSi, #btnNo {
+    width: 70px;
+    height: 35px;
+    font-size: 14px;
+  }
+}
+
